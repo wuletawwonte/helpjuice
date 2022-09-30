@@ -85,9 +85,6 @@ test:
 #
 production:
   <<: *default
-  database: do7kvjnlpkn08
-  username: unrfwknhthgsxl
-  password: e7277fee894a01c1d7dd56d67ad52bda6f6b59e0c12fa799c93259c31d7283d9
-  port: 5432
-  host: ec2-52-207-90-231.compute-1.amazonaws.com
-
+  database: helpjuice_production
+  username: helpjuice
+  password: <%= ENV["HELPJUICE_DATABASE_PASSWORD"] %>
