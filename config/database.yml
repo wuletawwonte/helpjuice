@@ -88,3 +88,4 @@ production:
   database: helpjuice_production
   username: helpjuice
   password: <%= ENV["HELPJUICE_DATABASE_PASSWORD"] %>
+  port: 5432
