@@ -1,24 +1,77 @@
-# README
+# Helpjuice Take Home Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> This is a monolithic rails project that implements the feature of adding content in a knowledge base software. 
 
-Things you may want to cover:
+## Built With
+- Ruby
+- Ruby on Rails
+- Javascript
+- PostgreSQL
+- SCSS
 
-* Ruby version
+## Live Links
+  
+- [Helpjuice](https://helpjuice.com/)
 
-* System dependencies
+## Getting Started
+To get a local copy up and running follow these simple example steps.
 
-* Configuration
+### Prerequisites
+- Ruby
+- Ruby on Rails
+- PostgreSQL
 
-* Database creation
+### Setup
+  Clone the repository
+  ```
+  git clone https://github.com/wuletawwonte/helpjuice.git
+  ```
 
-* Database initialization
+  ```
+  cd helpjuice
+  ```
 
-* How to run the test suite
+Setup the development and the test databases:
+  ```
+  rails db:create
+  ```
+  ```
+  rails db:migrate
+  ```
+### Install
+  Install the gems:
+   ```
+   bundle install
+   ```
 
-* Services (job queues, cache servers, search engines, etc.)
+### Usage
+  To run the server use:
+   ```
+   rails s
+   ```
+## Author
 
-* Deployment instructions
+#### :bust_in_silhouette: Wuletaw Wonte 
+  - [wuletawwonte](https://github.com/wuletawwonte)
+  - [LinkedIn](https://www.linkedin.com/in/wuletaw-wonte/).  
+  - [Twitter](https://twitter.com/wuletaww) 
 
-* ...
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
