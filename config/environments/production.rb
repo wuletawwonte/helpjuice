@@ -72,14 +72,15 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
-    :address => 'smtp.gmail.com',
-    :port => 587,
-    :domain => 'helpjuice-interview.herokuapp.com',
-    :user_name => Rails.application.credentials.dig(:email, :username),
-    :password => Rails.application.credentials.dig(:email, :password),
-    :authentication => :plain,
-    :enable_starttls_auto => true  
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'helpjuice-interview.herokuapp.com',
+    user_name:            Rails.application.credentials.dig(:email, :username),
+    password:             Rails.application.credentials.dig(:email, :password),
+    authentication:       'plain',
+    enable_starttls_auto: true
   }
+
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
