@@ -21,9 +21,9 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: localhost
-  port: 5433
-  username: postgres
-  password: postgres
+  port: <%= Rails.application.credentials.dig(:database, :port) %>
+  username: <%= Rails.application.credentials.dig(:database, :username) %>
+  password: <%= Rails.application.credentials.dig(:database, :password) %>
 
 development:
   <<: *default
