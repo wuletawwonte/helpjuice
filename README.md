@@ -11,7 +11,7 @@
 
 ## Live Links
   
-- [Helpjuice](https://helpjuice.com/)
+- [Helpjuice](https://helpjuice-interview.herokuapp.com/users/sign_in)
 
 ## Getting Started
 To get a local copy up and running follow these simple example steps.
@@ -53,7 +53,7 @@ Setup the development and the test databases:
 
 #### :bust_in_silhouette: Wuletaw Wonte 
   - [wuletawwonte](https://github.com/wuletawwonte)
-  - [LinkedIn](https://www.linkedin.com/in/wuletaw-wonte/).  
+  - [LinkedIn](https://www.linkedin.com/in/wuletaw-wonte/)
   - [Twitter](https://twitter.com/wuletaww) 
 
 ## 🤝 Contributing
