@@ -1,0 +1,9 @@
+$breakpoint: 48rem;
+
+@mixin breakpoint($point) {
+  @if $point == lg {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  }
+}

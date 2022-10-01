@@ -1,0 +1,50 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+
+  &__group {
+    width: 100%;
+
+    input {
+      width: 100%;
+      max-width: 100%;
+      padding: var(--space-xs) var(--space-s);
+      border: var(--border);
+      border-radius: var(--border-radius);
+      outline: none;
+      transition: box-shadow 250ms;
+
+      &:focus {
+        box-shadow: 0 0 0 2px var(--color-glint);
+      }
+    }
+  }
+
+  &__actions {
+    width: 100%;
+  }
+
+  &--auth {
+    padding: var(--space-l);
+    max-width: 30rem;
+    margin-top: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: var(--shadow-large);
+
+    .title {
+      display: flex;
+      justify-content: center;
+    }
+
+    .logo-link {
+      font-size: 2rem;
+    }
+
+    .remember > input {
+      width: 1rem;
+    }
+  }
+}
