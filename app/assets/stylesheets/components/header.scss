@@ -37,7 +37,6 @@
     .toggle-menu:hover {
       background-color: var(--color-background-2);
     }
-
   }
 
   &__right {
@@ -46,12 +45,13 @@
     padding-right: 2rem;
     gap: 1ch;
 
-    .dropdown, .dropdown:hover {
+    .dropdown,
+    .dropdown:hover {
       color: var(--color-primary);
     }
   }
 
   @include breakpoint(lg) {
-    flex-direction: row;    
+    flex-direction: row;
   }
 }

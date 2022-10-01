@@ -11,8 +11,8 @@
   margin-bottom: 1.2rem;
   transition: border 0.5s;
 
-
-  &__p, &__feathure {
+  &__p,
+  &__feathure {
     border: none;
     cursor: pointer;
   }
@@ -33,7 +33,8 @@
     color: var(--color-white);
   }
 
-  &__left, &__right {
+  &__left,
+  &__right {
     display: flex;
     align-items: stretch;
     gap: 8px;

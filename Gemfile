@@ -82,5 +82,5 @@ end
 # Devise a gem for handling authentication
 gem 'devise', '~> 4.8'
 
-# Font awesome icons 
-gem "font-awesome-sass", "~> 6.2.0"
+# Font awesome icons
+gem 'font-awesome-sass', '~> 6.2.0'
