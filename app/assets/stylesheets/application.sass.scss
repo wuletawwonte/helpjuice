@@ -1,8 +1,15 @@
 // Entry point for your Sass build
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+
+// Mixins
+@import "mixins/media.scss";
+
+// Configurations
+@import "config/variables.scss";
+@import "config/reset.scss";
+
+// Components
+@import "components/button.scss";
+@import "components/form.scss";
+
+// Layouts and containers
+@import "layouts/container.scss";

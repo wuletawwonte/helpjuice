@@ -1,0 +1,16 @@
+.alert {
+  width: 100%;
+  padding: var(--space-xs);
+  border-radius: var(--border-radius);
+  text-align: center;
+
+  &__danger {
+    color: var(--color-danger);
+    background-color: var(--color-danger-bg);
+  }
+
+  &__success {
+    color: var(--color-success);
+    background-color: var(--color-success-bg);
+  }
+}
