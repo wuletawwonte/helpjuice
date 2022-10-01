@@ -83,4 +83,4 @@ end
 gem 'devise', '~> 4.8'
 
 # Font awesome icons 
-gem 'font-awesome-rails'
+gem "font-awesome-sass", "~> 6.2.0"

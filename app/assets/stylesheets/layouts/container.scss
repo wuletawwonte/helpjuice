@@ -5,6 +5,10 @@
   margin-left: auto;
   margin-right: auto;
 
+  &--post-index {
+    margin-top: 3rem;
+  }
+
   @include breakpoint(lg) {
     padding-right: 20%;
     padding-left: 20%;
