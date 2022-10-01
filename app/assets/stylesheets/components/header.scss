@@ -5,8 +5,10 @@
   right: 0;
   height: 3.5rem;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   color: var(--color-header-menu);
+  background-color: var(--color-background);
 
   a {
     color: var(--color-header-menu);
@@ -47,5 +49,9 @@
     .dropdown, .dropdown:hover {
       color: var(--color-primary);
     }
+  }
+
+  @include breakpoint(lg) {
+    flex-direction: row;    
   }
 }
