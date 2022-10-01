@@ -19,10 +19,6 @@
       &:focus {
         box-shadow: 0 0 0 2px var(--color-glint);
       }
-
-      &--invalid {
-        border-color: var(--color-primary);
-      }
     }
   }
 
