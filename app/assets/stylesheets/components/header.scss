@@ -1,0 +1,57 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--color-header-menu);
+  background-color: var(--color-background);
+
+  a {
+    color: var(--color-header-menu);
+  }
+
+  a:hover {
+    color: var(--color-header-menu-accent);
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    gap: 1ch;
+
+    .toggle-menu {
+      background-color: transparent;
+      border: none;
+      margin-right: 1ch;
+      cursor: pointer;
+      padding: 5px 8px;
+      border-radius: var(--border-radius);
+      transition: background-color 0.3s;
+    }
+
+    .toggle-menu:hover {
+      background-color: var(--color-background-2);
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    padding-right: 2rem;
+    gap: 1ch;
+
+    .dropdown,
+    .dropdown:hover {
+      color: var(--color-primary);
+    }
+  }
+
+  @include breakpoint(lg) {
+    flex-direction: row;
+  }
+}

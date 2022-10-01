@@ -5,11 +5,16 @@
   // Application colors
   --color-primary: #2066ae;
   --color-primary-accent: #0e76de;
+  --color-secondary: #ff6470;
   --color-glint: #a3d1ff;
   --color-success: #155724;
   --color-success-bg: #d4edda;
   --color-danger: #721c24;
   --color-danger-bg: #f8d7da;
+  --color-header-menu: #37352f80;
+  --color-header-menu-accent: #37352fb9;
+  --color-border: #edeef1;
+  --color-border-dark: #dedfe3;
 
   // Classical line heights
   --line-height-headers: 1.1;
@@ -18,8 +23,11 @@
   // Neutral colors
   --color-white: #fff;
   --color-background: #fcfaf7;
+  --color-background-2: #e8e2da;
   --color-text-header: #0c121d;
   --color-light: #eeecec;
+  --color-teal: #14805f;
+  --color-teal-light: #d1fae5;
 
   // Border radius
   --border-radius: 0.375rem;

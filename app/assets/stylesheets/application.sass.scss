@@ -11,6 +11,13 @@
 @import "components/button.scss";
 @import "components/form.scss";
 @import "components/alert.scss";
+@import "components/header.scss";
+@import "components/mini-nav.scss";
+@import "components/addpost.scss";
 
 // Layouts and containers
 @import "layouts/container.scss";
+
+// It is not good to import two big libraries but just for this project
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
