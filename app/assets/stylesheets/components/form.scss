@@ -10,7 +10,7 @@
     input {
       width: 100%;
       max-width: 100%;
-      padding: var(--space-xxs) var(--space-xs);
+      padding: var(--space-xs) var(--space-s);
       border: var(--border);
       border-radius: var(--border-radius);
       outline: none;
@@ -30,12 +30,26 @@
     width: 100%;
   }
 
-  &--signin {
+  &--auth {
     padding: var(--space-l);
     max-width: 30rem;
-    margin-top: 10%;
+    margin-top: 5rem;
     margin-left: auto;
     margin-right: auto;
     box-shadow: var(--shadow-large);
+
+    .title {
+      display: flex;
+      justify-content: center;
+    }  
+
+    .logo-link {
+      font-size: 2rem;
+    }    
+    
+    .remember > input {
+      width: 1rem;
+    }
+
   }
 }

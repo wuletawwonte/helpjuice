@@ -1,8 +1,8 @@
 <main class="container">
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form form--signin" } ) do |f| %>
-    <div class="form__group">
-      <h1>Log in</h1>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form form--auth" } ) do |f| %>
+    <div class="form__group title">      
+      <%= link_to "HelpJuice", new_user_session_path, class: "logo-link" %>
     </div>
 
     <div class="form__group">
@@ -16,14 +16,14 @@
     </div>
 
     <% if devise_mapping.rememberable? %>
-      <div class="form__group">
+      <div class="form__group remember">
         <%= f.check_box :remember_me %>
         <%= f.label :remember_me %>
       </div>
     <% end %>
 
     <div class="form__actions">
-      <%= f.submit "Log in", class: "btn" %>
+      <%= f.submit "Log in", class: "btn btn--primary" %>
     </div>
 
     <div class="form__group">
