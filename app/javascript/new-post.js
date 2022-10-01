@@ -36,3 +36,6 @@ function resetField() {
   currentInput.placeholder = "";
 }
 
+currentInput.addEventListener("focus", () => {
+  currentInput.placeholder = PLACEHOLDER;
+});
