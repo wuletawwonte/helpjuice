@@ -8,6 +8,10 @@ class ApplicationController < ActionController::Base
     new_user_session_path
   end
 
+  def after_sign_in_path_for(_resource)
+    posts_index_path 
+  end
+
   def update_allowed_parameters
     devise_parameter_sanitizer.permit(:sign_up) do |u|
       u.permit(:first_name, :last_name, :email, :password, :password_confirmation)
