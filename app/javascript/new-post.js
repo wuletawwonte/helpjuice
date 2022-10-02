@@ -24,7 +24,7 @@ currentInputContainer.appendChild(inputSelector.getSelector());
 newPost.appendChild(currentInputContainer);
 
 currentInput.addEventListener('keydown', (e) => {
-  if(e.code !== "Space" && currentInput.value === "/1") {    
+  if(e.code !== "Slash" && currentInput.value === "/1") {    
     const headerOne = createHeaderOne();
     newPost.insertBefore(headerOne, currentInputContainer);
     currentInput.value = "";
