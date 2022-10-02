@@ -16,6 +16,10 @@ class InputSelector {
     this.selector = selector;
   }
 
+  reset() {
+    this.selector.innerHTML = this.heading;
+  }
+
   setKey(mykey) {
     this.key = mykey;
     this.selector.innerHTML = this.heading + `
