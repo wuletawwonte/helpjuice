@@ -1,9 +1,13 @@
+import InputSelector from "./input-selector";
 const PLACEHOLDER = "Type / for blocks, @ to link docs or poeple";
+
+
 
 const newPost = document.getElementById('newpost');
 const title = document.getElementById('title');
 const currentInputContainer = document.createElement('div');
 const currentInput = document.createElement("input");
+const inputSelector = new InputSelector("");
 
 title.addEventListener('keyup', (e) => {
   if(e.key === "Enter") {
@@ -16,6 +20,7 @@ currentInput.type = "text";
 currentInput.placeholder = PLACEHOLDER;
 
 currentInputContainer.appendChild(currentInput);
+currentInputContainer.appendChild(inputSelector.getSelector());
 newPost.appendChild(currentInputContainer);
 
 currentInput.addEventListener('keydown', (e) => {
@@ -26,6 +31,16 @@ currentInput.addEventListener('keydown', (e) => {
     currentInput.value = "";
     headerOne.focus();
   }
+  if(e.code === "Slash" && currentInput.value === "") {
+    inputSelector.getSelector().classList.add('show');
+  }
+  if(e.code === "Digit1" && currentInput.value === "/") {
+    inputSelector.setKey("1");
+  }
+});
+
+currentInput.addEventListener('blur', () => {
+  inputSelector.getSelector().classList.remove('show');
 });
 
 function createHeaderOne() {

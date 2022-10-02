@@ -34,6 +34,47 @@
       input {
         width: 100%;
       }
+
+      .input-selector {
+        display: none;
+        background-color: var(--color-white);
+        border-radius: var(--border-radius);
+        max-width: 20rem;
+        box-shadow: var(--shadow-small);
+
+        p {
+          color: var(--color-header-menu);
+        }
+
+        .selector-heading, h4 {
+          padding: var(--space-s) var(--space-xs);
+        }
+
+        ul {
+          display: flex;
+          flex-direction: column;
+
+          li {
+            display: flex;
+            align-items: center;
+            padding: 0 var(--space-xs);
+            gap: 5px;
+
+            i {
+              font-size: var(--space-xxl);
+            }
+          }
+
+          li:hover {
+            background-color: var(--color-background);
+            cursor: pointer;
+          }
+        }
+      }
+
+      .input-selector.show {
+        display: block;
+      }
     }
 
     [contenteditable=true]:empty:before {
