@@ -21,7 +21,7 @@ class InputSelector {
     this.selector.innerHTML = this.heading + `
       <h4>Filtering keyword <span>${this.key}</span></h4>
       <ul>
-        <li>
+        <li id="headingone">
           <i class="fa-solid fa-t"></i>
           <div>
             <h3>Heading 1</h3>

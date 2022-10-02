@@ -5,7 +5,6 @@
   right: 0;
   height: 3.5rem;
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   color: var(--color-header-menu);
   background-color: var(--color-background);
@@ -18,11 +17,20 @@
     color: var(--color-header-menu-accent);
   }
 
-  &__left {
+  &__mobileleft {
     display: flex;
     align-items: center;
     padding-left: 1rem;
     gap: 1ch;
+
+
+    @include breakpoint(lg) {
+      display: none;
+    }
+  }
+
+  &__left {
+    display: none;
 
     .toggle-menu {
       background-color: transparent;
@@ -37,6 +45,13 @@
     .toggle-menu:hover {
       background-color: var(--color-background-2);
     }
+
+    @include breakpoint(lg) {
+      display: flex;
+      align-items: center;
+      padding-left: 1rem;
+      gap: 1ch;
+    }  
   }
 
   &__right {
