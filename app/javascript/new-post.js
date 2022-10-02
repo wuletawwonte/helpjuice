@@ -19,7 +19,7 @@ currentInput.addEventListener('keyup', (e) => {
   if(e.key === "Enter" && currentInput.value === "/1") {
     const headerOne = createHeaderOne();
     newPost.insertBefore(headerOne, currentInput);
-    resetField();
+    currentInput.value = "";
     headerOne.focus();
   }
 });
@@ -28,18 +28,25 @@ function createHeaderOne() {
   const newEl = document.createElement('h1');
   newEl.contentEditable = true;
   newEl.setAttribute("placeholder", "Heading 1");
-  newEl.addEventListener('keypress', (e) => {
+  newEl.addEventListener('keydown', (e) => {
     if(e.key === "Enter") {
       e.preventDefault();
+      if(newEl.innerHTML === "<br>") {
+        newEl.innerHTML = "";
+      }
       currentInput.focus();
+    }
+    if(e.code === "Backspace" && newEl.innerText === "") {
+      if(newEl === newEl.parentNode.firstChild) {
+        title.focus();
+      }
+      newEl.parentElement.removeChild(newEl);
+    }
+    if(e.code === "Backspace" && newEl.innerHTML === "<br>") {
+      newEl.innerHTML = "";
     }
   })
   return newEl;   
-}
-
-function resetField() {
-  currentInput.value = "";
-  currentInput.placeholder = "";
 }
 
 currentInput.addEventListener("focus", () => {
