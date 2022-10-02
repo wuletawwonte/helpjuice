@@ -32,6 +32,7 @@ currentInput.addEventListener('keydown', (e) => {
     headerOne.focus();
   }
   if(e.code === "Slash" && currentInput.value === "") {
+    inputSelector.reset();
     inputSelector.getSelector().classList.add('show');
   }
   if(e.code === "Digit1" && currentInput.value === "/") {
