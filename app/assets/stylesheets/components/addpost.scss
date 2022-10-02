@@ -27,5 +27,11 @@
       margin-top: 5px;
       background-color: transparent;
     }
+
+    [contenteditable=true]:empty:before {
+      content: attr(placeholder);
+      color: #82828287;
+    }
+
   }
 }

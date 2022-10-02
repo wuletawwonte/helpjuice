@@ -17,19 +17,25 @@ newPost.appendChild(currentInput);
 
 currentInput.addEventListener('keyup', (e) => {
   if(e.key === "Enter" && currentInput.value === "/1") {
-    const newEl = document.createElement('h1');
-    newEl.contentEditable = true;
-    newEl.addEventListener('keypress', (e) => {
-      if(e.key === "Enter") {
-        e.preventDefault();
-        currentInput.focus();
-      }
-    })    
-    newPost.insertBefore(newEl, currentInput);
+    const headerOne = createHeaderOne();
+    newPost.insertBefore(headerOne, currentInput);
     resetField();
-    newEl.focus();
+    headerOne.focus();
   }
 });
+
+function createHeaderOne() {
+  const newEl = document.createElement('h1');
+  newEl.contentEditable = true;
+  newEl.setAttribute("placeholder", "Heading 1");
+  newEl.addEventListener('keypress', (e) => {
+    if(e.key === "Enter") {
+      e.preventDefault();
+      currentInput.focus();
+    }
+  })
+  return newEl;   
+}
 
 function resetField() {
   currentInput.value = "";
