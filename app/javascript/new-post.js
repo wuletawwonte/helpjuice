@@ -2,6 +2,7 @@ const PLACEHOLDER = "Type / for blocks, @ to link docs or poeple";
 
 const newPost = document.getElementById('newpost');
 const title = document.getElementById('title');
+const currentInputContainer = document.createElement('div');
 const currentInput = document.createElement("input");
 
 title.addEventListener('keyup', (e) => {
@@ -10,15 +11,18 @@ title.addEventListener('keyup', (e) => {
   }
 })
 
+currentInputContainer.className = "post__content__inputcontainer";
 currentInput.type = "text";
 currentInput.placeholder = PLACEHOLDER;
 
-newPost.appendChild(currentInput);
+currentInputContainer.appendChild(currentInput);
+newPost.appendChild(currentInputContainer);
 
-currentInput.addEventListener('keyup', (e) => {
-  if(e.key === "Enter" && currentInput.value === "/1") {
+currentInput.addEventListener('keydown', (e) => {
+  if(e.code === "Space" && currentInput.value === "/1") {    
+    e.preventDefault();
     const headerOne = createHeaderOne();
-    newPost.insertBefore(headerOne, currentInput);
+    newPost.insertBefore(headerOne, currentInputContainer);
     currentInput.value = "";
     headerOne.focus();
   }
@@ -35,8 +39,10 @@ function createHeaderOne() {
         newEl.innerHTML = "";
       }
       currentInput.focus();
+      currentInput.value = "";
     }
     if(e.code === "Backspace" && newEl.innerText === "") {
+      e.preventDefault();
       if(newEl === newEl.parentNode.firstChild) {
         title.focus();
       }

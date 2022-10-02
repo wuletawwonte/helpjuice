@@ -21,11 +21,19 @@
     flex-direction: column;
     margin-top: 5px;
 
-    & > * {
+    & * {
       border: none;
       outline: none;
       margin-top: 5px;
       background-color: transparent;
+    }
+
+    &__inputcontainer {
+      position: relative;
+
+      input {
+        width: 100%;
+      }
     }
 
     [contenteditable=true]:empty:before {
