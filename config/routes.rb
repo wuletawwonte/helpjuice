@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  get "/posts/index", to: "posts#index"
 
   devise_scope :user do
     unauthenticated :user do
