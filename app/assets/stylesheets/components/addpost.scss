@@ -21,11 +21,75 @@
     flex-direction: column;
     margin-top: 5px;
 
-    & > * {
+    & * {
       border: none;
       outline: none;
       margin-top: 5px;
       background-color: transparent;
+    }
+
+    &__inputcontainer {
+      position: relative;
+
+      .input {
+        width: 100%;
+      }
+
+      .input-selector {
+        visibility: hidden;
+        background-color: var(--color-white);
+        border-radius: var(--border-radius);
+        max-width: 20rem;
+        box-shadow: var(--shadow-small);
+
+        p {
+          color: var(--color-header-menu);
+        }
+
+        .selector-heading,
+        h4 {
+          padding: var(--space-s) var(--space-xs);
+        }
+
+        ul {
+          display: flex;
+          flex-direction: column;
+
+          li {
+            display: flex;
+            align-items: center;
+            padding: 0 var(--space-xs);
+            gap: 5px;
+
+            i {
+              font-size: var(--space-xxl);
+            }
+          }
+
+          li:hover {
+            background-color: var(--color-background);
+            cursor: pointer;
+          }
+        }
+      }
+
+      .input-selector.show {
+        visibility: visible;
+      }
+    }
+
+    [contenteditable=true]:empty::before {
+      content: attr(placeholder);
+      color: #82828287;
+    }
+
+    [contenteditable=true]:hover {
+      cursor: text;
+    }
+
+    input:not(:hover):not(:focus)::placeholder {
+      color: transparent;
+      transition: color 1s;
     }
   }
 }
