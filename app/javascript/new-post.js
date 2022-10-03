@@ -24,6 +24,7 @@ title.addEventListener('keyup', (e) => {
 })
 
 currentInputContainer.className = "post__content__inputcontainer";
+currentInput.className = "input";
 currentInput.type = "text";
 currentInput.placeholder = PLACEHOLDER;
 

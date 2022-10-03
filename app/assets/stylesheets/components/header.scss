@@ -27,7 +27,6 @@
       cursor: pointer;
     }
 
-
     @include breakpoint(lg) {
       display: none;
     }
@@ -55,7 +54,7 @@
       align-items: center;
       padding-left: 1rem;
       gap: 1ch;
-    }  
+    }
   }
 
   &__right {
