@@ -36,7 +36,7 @@
       }
 
       .input-selector {
-        display: none;
+        visibility: hidden;
         background-color: var(--color-white);
         border-radius: var(--border-radius);
         max-width: 20rem;
@@ -73,7 +73,7 @@
       }
 
       .input-selector.show {
-        display: block;
+        visibility: visible;
       }
     }
 

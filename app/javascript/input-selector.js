@@ -3,17 +3,15 @@ class InputSelector {
   constructor(key) {
     this.key = key;
     this.heading = `
-    <div class="selector-heading">  
-      <h3>Add blocks</h3>
-      <p>Keep typing to filter, or escape to exit</p>
-    </div>
+      <div class="selector-heading">  
+        <h3>Add blocks</h3>
+        <p>Keep typing to filter, or escape to exit</p>
+      </div>
     `;
-    const selector = document.createElement('div');
-    selector.id = "inputselector";
-    selector.className = "input-selector";
-  
-    selector.innerHTML = this.heading;  
-    this.selector = selector;
+    this.selector = document.createElement('div');
+    this.selector.id = "inputselector";
+    this.selector.className = "input-selector";
+    this.selector.innerHTML = this.heading;  
   }
 
   reset() {
@@ -25,11 +23,11 @@ class InputSelector {
     this.selector.innerHTML = this.heading + `
       <h4>Filtering keyword <span>${this.key}</span></h4>
       <ul>
-        <li id="headingone">
-          <i class="fa-solid fa-t"></i>
-          <div>
-            <h3>Heading 1</h3>
-            <p>Shortcut: type # + space</p>
+        <li class="h1">
+          <i class="fa-solid fa-t h1"></i>
+          <div class="h1">
+            <h3 class="h1">Heading 1</h3>
+            <p class="h1">Shortcut: type # + space</p>
           </div>
         </li>
         <li>
@@ -41,11 +39,6 @@ class InputSelector {
         </li>
       </ul>
     `;
-    console.log(this.selector);
-  }
-
-  getSelector() {
-    return this.selector;
   }
 }
 

@@ -23,6 +23,10 @@
     padding-left: 1rem;
     gap: 1ch;
 
+    i {
+      cursor: pointer;
+    }
+
 
     @include breakpoint(lg) {
       display: none;

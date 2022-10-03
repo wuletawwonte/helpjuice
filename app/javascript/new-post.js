@@ -9,6 +9,14 @@ const currentInputContainer = document.createElement('div');
 const currentInput = document.createElement("input");
 const inputSelector = new InputSelector("");
 
+const addHeaderOne = () => {
+  const headerOne = createHeaderOne();
+  newPost.insertBefore(headerOne, currentInputContainer);
+  currentInput.value = "";
+  headerOne.focus();
+  inputSelector.selector.classList.remove('show');
+};
+
 title.addEventListener('keyup', (e) => {
   if(e.key === "Enter") {
     currentInput.focus();
@@ -20,7 +28,7 @@ currentInput.type = "text";
 currentInput.placeholder = PLACEHOLDER;
 
 currentInputContainer.appendChild(currentInput);
-currentInputContainer.appendChild(inputSelector.getSelector());
+currentInputContainer.appendChild(inputSelector.selector);
 newPost.appendChild(currentInputContainer);
 
 editStatusIcon.toggleClass = () => {
@@ -35,25 +43,36 @@ editStatusIcon.toggleClass = () => {
   }
 }
 
+inputSelector.selector.addEventListener("click", (e) => {
+  if(e.target.classList.contains('h1')) {
+    addHeaderOne();
+  } else {
+    currentInput.focus();
+  }
+});
+
+document.addEventListener('click', (e) => {
+  if(!inputSelector.selector.contains(e.target)) {
+    inputSelector.selector.classList.remove('show');
+  }
+});
+
+// currentInput.addEventListener('focusout', () => {
+//   inputSelector.selector.classList.remove('show');
+// });
+
 currentInput.addEventListener('keydown', (e) => {
   if(e.code !== "Backspace" && currentInput.value === "/1") {    
     e.preventDefault();
-    const headerOne = createHeaderOne();
-    newPost.insertBefore(headerOne, currentInputContainer);
-    currentInput.value = "";
-    headerOne.focus();
+    addHeaderOne();
   }
   if(e.code === "Slash" && currentInput.value === "") {
     inputSelector.reset();
-    inputSelector.getSelector().classList.add('show');
+    inputSelector.selector.classList.add('show');
   }
   if(e.code === "Digit1" && currentInput.value === "/") {
     inputSelector.setKey("1");
   }
-});
-
-currentInput.addEventListener('blur', () => {
-  inputSelector.getSelector().classList.remove('show');
 });
 
 function createHeaderOne() {
