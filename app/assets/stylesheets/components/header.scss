@@ -64,6 +64,10 @@
     .dropdown:hover {
       color: var(--color-primary);
     }
+
+    #editstatus.active {
+      color: var(--color-text-header);
+    }
   }
 
   @include breakpoint(lg) {

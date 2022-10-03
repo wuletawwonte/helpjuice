@@ -26,8 +26,12 @@ newPost.appendChild(currentInputContainer);
 editStatusIcon.toggleClass = () => {
   if(editStatusIcon.className === "fa-solid fa-lock") {
     editStatusIcon.className = "fa-solid fa-unlock";
+    editStatus.classList.remove('active');
+    return false;
   } else if(editStatusIcon.className === "fa-solid fa-unlock") {
     editStatusIcon.className = "fa-solid fa-lock";
+    editStatus.classList.add('active');
+    return true;
   }
 }
 
@@ -85,5 +89,17 @@ currentInput.addEventListener("focus", () => {
 
 editStatus.addEventListener('click', (e) => {
   e.preventDefault();
-  editStatusIcon.toggleClass();
+  if(editStatusIcon.toggleClass()) {
+    const allBlocks = document.querySelectorAll('#newpost > h1[contenteditable=true]');
+    allBlocks.forEach(block => {
+      block.contentEditable = false;
+    });
+    newPost.removeChild(currentInputContainer);
+  } else {
+    const allBlocks = document.querySelectorAll('#newpost > h1[contenteditable=false]');
+    allBlocks.forEach(block => {
+      block.contentEditable = true;
+    });
+    newPost.append(currentInputContainer);
+  }
 });
