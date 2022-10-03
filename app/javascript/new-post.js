@@ -1,10 +1,10 @@
 import InputSelector from "./input-selector";
 const PLACEHOLDER = "Type / for blocks, @ to link docs or poeple";
 
-
-
 const newPost = document.getElementById('newpost');
 const title = document.getElementById('title');
+const editStatus = document.getElementById('editstatus');
+const editStatusIcon = document.getElementById('editicon');
 const currentInputContainer = document.createElement('div');
 const currentInput = document.createElement("input");
 const inputSelector = new InputSelector("");
@@ -22,6 +22,14 @@ currentInput.placeholder = PLACEHOLDER;
 currentInputContainer.appendChild(currentInput);
 currentInputContainer.appendChild(inputSelector.getSelector());
 newPost.appendChild(currentInputContainer);
+
+editStatusIcon.toggleClass = () => {
+  if(editStatusIcon.className === "fa-solid fa-lock") {
+    editStatusIcon.className = "fa-solid fa-unlock";
+  } else if(editStatusIcon.className === "fa-solid fa-unlock") {
+    editStatusIcon.className = "fa-solid fa-lock";
+  }
+}
 
 currentInput.addEventListener('keydown', (e) => {
   if(e.code !== "Backspace" && currentInput.value === "/1") {    
@@ -73,4 +81,9 @@ function createHeaderOne() {
 
 currentInput.addEventListener("focus", () => {
   currentInput.placeholder = PLACEHOLDER;
+});
+
+editStatus.addEventListener('click', (e) => {
+  e.preventDefault();
+  editStatusIcon.toggleClass();
 });
