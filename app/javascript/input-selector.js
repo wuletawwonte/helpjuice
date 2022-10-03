@@ -23,11 +23,11 @@ class InputSelector {
     this.selector.innerHTML = this.heading + `
       <h4>Filtering keyword <span>${this.key}</span></h4>
       <ul>
-        <li class="h1">
-          <i class="fa-solid fa-t h1"></i>
-          <div class="h1">
-            <h3 class="h1">Heading 1</h3>
-            <p class="h1">Shortcut: type # + space</p>
+        <li id="h1">
+          <i class="fa-solid fa-t"></i>
+          <div>
+            <h3>Heading 1</h3>
+            <p>Shortcut: type # + space</p>
           </div>
         </li>
         <li>

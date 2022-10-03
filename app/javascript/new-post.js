@@ -44,7 +44,7 @@ editStatusIcon.toggleClass = () => {
 }
 
 inputSelector.selector.addEventListener("click", (e) => {
-  if(e.target.classList.contains('h1')) {
+  if(document.getElementById('h1').contains(e.target)) {
     addHeaderOne();
   } else {
     currentInput.focus();
@@ -57,16 +57,12 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// currentInput.addEventListener('focusout', () => {
-//   inputSelector.selector.classList.remove('show');
-// });
-
 currentInput.addEventListener('keydown', (e) => {
   if(e.code !== "Backspace" && currentInput.value === "/1") {    
     e.preventDefault();
     addHeaderOne();
   }
-  if(e.code === "Slash" && currentInput.value === "") {
+  if((e.code === "Slash" && currentInput.value === "") || (e.code === "Backspace" && currentInput.value.startsWith("/") && currentInput.value.length === 2)) {
     inputSelector.reset();
     inputSelector.selector.classList.add('show');
   }
