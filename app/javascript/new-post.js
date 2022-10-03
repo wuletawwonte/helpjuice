@@ -69,6 +69,9 @@ currentInput.addEventListener('keydown', (e) => {
   if(e.code === "Digit1" && currentInput.value === "/") {
     inputSelector.setKey("1");
   }
+  if(e.code === "Backspace" && currentInput.value === "") {
+    inputSelector.selector.classList.remove('show');
+  }
 });
 
 function createHeaderOne() {
